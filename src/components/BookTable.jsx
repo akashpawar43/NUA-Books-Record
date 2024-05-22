@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { downloadCSV } from '../utils/downloadCSV';
 
 const BookTable = () => {
     const [books, setBooks] = useState([]);
@@ -63,6 +64,9 @@ const BookTable = () => {
                     <input type="number" value={currentPage} onChange={handlePageChange} min="1" className="mx-2 w-14 text-center bg-gray-700 rounded-md" />
                     <button onClick={() => setCurrentPage((prev) => prev + 1)}>Next</button>
                 </div>
+            </div>
+            <div className="mb-4">
+                <button onClick={() => downloadCSV(books, 'books.csv')} className="p-2 rounded-md bg-green-600 text-white">Download CSV</button>
             </div>
             <table className="min-w-full bg-gray-800 border">
                 <thead className='bg-gray-700'>
