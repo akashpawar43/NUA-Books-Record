@@ -1,4 +1,3 @@
-// src/components/SearchBooksByAuthor.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import { downloadCSV } from '../utils/downloadCSV';
@@ -30,38 +29,40 @@ const SearchBooksByAuthor = () => {
                 <h1 className="text-2xl">Search Books by Author</h1>
             </header>
             <main className="p-4">
-                <form onSubmit={handleSearch} className="mb-4">
+                <form onSubmit={handleSearch} className="mb-4 flex flex-col sm:flex-row">
                     <input
                         type="text"
                         value={author}
                         onChange={(e) => setAuthor(e.target.value)}
                         placeholder="Enter author name"
-                        className="p-2 rounded-md bg-gray-700 text-white"
+                        className="p-2 rounded-md bg-gray-700 text-white flex-grow mb-2 sm:mb-0 sm:mr-2"
                     />
-                    <button type="submit" className="ml-2 p-2 rounded-md bg-blue-600 text-white">Search</button>
+                    <button type="submit" className="p-2 rounded-md bg-blue-600 text-white">Search</button>
                 </form>
-                {loading && <p>Loading...</p>}
                 <div className="mb-4">
                     <button onClick={() => downloadCSV(books, 'books.csv')} className="p-2 rounded-md bg-green-600 text-white">Download CSV</button>
                 </div>
-                <table className="min-w-full bg-gray-800">
-                    <thead className="bg-gray-700">
-                        <tr>
-                            <th>Title</th>
-                            <th>First Publish Year</th>
-                            <th>Author Name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {books.map((book, index) => (
-                            <tr key={index} className="border-t border-gray-700">
-                                <td>{book.title}</td>
-                                <td>{book.first_publish_year}</td>
-                                <td>{book.author_name?.join(', ')}</td>
+                <div className="overflow-x-auto">
+                    <table className="min-w-full bg-gray-800">
+                        <thead className="bg-gray-700">
+                            <tr>
+                                <th className="p-2">Title</th>
+                                <th className="p-2">First Publish Year</th>
+                                <th className="p-2">Author Name</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        {loading && <p>Loading...</p>}
+                        <tbody>
+                            {books.map((book, index) => (
+                                <tr key={index} className="border-t border-gray-700">
+                                    <td className="p-2">{book.title}</td>
+                                    <td className="p-2">{book.first_publish_year}</td>
+                                    <td className="p-2">{book.author_name?.join(', ')}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </main>
         </div>
     );
