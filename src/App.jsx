@@ -5,7 +5,7 @@ import SearchBooksByAuthor from './components/SearchBooksByAuthor';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App min-h-screen bg-gray-900">
       <header className="bg-gray-800 text-white p-4 text-center">
         <h1 className="text-2xl">Book Dashboard</h1>
         <nav className="mt-2">
