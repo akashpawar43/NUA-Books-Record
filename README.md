@@ -1,4 +1,4 @@
-<h1 align="center" id="title">Qilo</h1>
+<h1 align="center" id="title">NUA-Books-Record</h1>
 
 <!-- <p id="description">Introducing our innovative WeatherExplorer app, your go-to companion for real-time weather updates tailored to your favorite cities! Whether you're planning a weekend getaway, scheduling outdoor activities, or just staying informed about the conditions around the world.</p> -->
 
@@ -7,13 +7,11 @@
 
 Here're some of the project's best features:
 
-*   Add Text
-*   get Text list
-*   Delete Text
-*   Weather Dashboard (Avg Temp of Week, Avg Rainfall of Week, Avg Humidity of Week, Current Temp)
-*   bar chart displaying avg temperature of previous week
-*   Notepad
-*   Find weather by (Country, State, City) name
+*   Search books by author
+*   get 10, 50, 100 records per page
+*   apply asc/ desc sort on all the columns
+*   get books details like ratings, author name, title, first publish year, subject, author birth date, author top work
+*   Download the current results in a CSV
 
 
 <h2>🛠️ Installation Steps:</h2>
@@ -24,19 +22,13 @@ Here're some of the project's best features:
 npm install
 ```
 
-<p>2. Create .env file in root directory and insert below env variables:</p>
-
-```
-VITE_API_KEY = "Enter your openweathermap api key"
-```
-
-<p>3. In the project directory you can run:</p>
+<p>2. In the project directory you can run:</p>
 
 ```
 npm run dev
 ```
 
-<p>4. For building Production build</p>
+<p>3. For building Production build</p>
 
 ```
 npm run build
