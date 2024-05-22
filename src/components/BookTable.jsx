@@ -66,7 +66,7 @@ const BookTable = () => {
                 </div>
             </div>
             <div className="mb-4">
-                <button onClick={() => downloadCSV(books, 'books.csv')} className="p-2 rounded-md bg-green-600 text-white">Download CSV</button>
+                <button onClick={() => downloadCSV(currentRecords, 'books.csv')} className="p-2 rounded-md bg-green-600 text-white">Download CSV</button>
             </div>
             <table className="min-w-full bg-gray-800 border">
                 <thead className='bg-gray-700'>
