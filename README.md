@@ -41,7 +41,6 @@ npm run build
 Technologies used in the project:
 
 *   React.JS
-*   Node.JS
 *   Tailwind CSS
 *   Html
 *   CSS
